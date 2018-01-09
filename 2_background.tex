@@ -10,36 +10,8 @@ Goldberg and Deb~\cite{goldberg1991comparative} stated that there exists several
 Tournament selection is translation and scaling invariant~\cite{maza1993analysis}. That means that the behavior of the selection method is not affect by the scale of the fitness values~\cite{back2000evolutionary}.
 
 Tournament selection is conducted as: choose a number $K$ of solutions randomly from the population and select the best solution from this group as a parent for the crossover operator. Repeat this operation for each parent necessary. This $K$ is the tournament size parameter that we investigate in this paper.
-%
-%
-%\begin{algorithm}
-%	\caption{Tournament Procedure}
-%	\label{tournament_procedure}
-%	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-%	\SetKw{return}{return}
-%	\Input{individuals, k, tournsize}
-%	\tiny	\begin{itemize}
-%		\item individuals: A list of individuals to select from.\vspace{-3mm}
-%		\item k: The number of individuals to select.\vspace{-3mm}
-%		\item tournsize: The number of individuals participating in each tournament.\vspace{-3mm}
-%	\end{itemize}
-%	
-%	\normalsize
-%	
-%	\Output{list of selected individuals}
-%	\BlankLine
-%		
-%	selected = list()\\
-%	\For{i = 1 to k}{
-%		candidates = choose\_Random(individuals, tournsize)\\
-%		selected[i] = max(candidates, by: fitness value)
-%	}
-%	\return selected
-%\end{algorithm}
-%
-%
-%
-%Often tournaments are held only between two individuals (binary tournament) but a generalization is possible to an arbitrary group size k called tournament size~\cite{blickle1995mathematical, goldberg1991comparative}. A tournament selection, as any selection mechanism in GA, simply favors the selection of better individuals of a population to influence the next generation. 
+
+Often tournaments are held only between two individuals (binary tournament) but a generalization is possible to an arbitrary group size k called tournament size~\cite{blickle1995mathematical, goldberg1991comparative}. A tournament selection, as any selection mechanism in GA, simply favors the selection of better individuals of a population to influence the next generation. 
 
 
 \subsection{Selection Schemes and BBOB functions}

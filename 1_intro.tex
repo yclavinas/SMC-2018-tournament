@@ -7,8 +7,6 @@ One of the most used selection operator is the tournament selection operator. It
 
 As a rule of thumb, small values, such as 2 or 3, are widely used. Filipovic~\cite{filipovic2012fine} argued that small vales lead to small selection pressure and may be good choices, but, very often, the search process converges too slowly with smaller tournament size (and too fast with bigger tournament size). 
 
-%Very often, the search process converges too slow with smaller tournament size and too fast with bigger tournament size
- 
  We would like to reconsider the idea that exists a relationship between exploration versus exploitation and the tournament size parameter by verifying, experimentally, the real impact of the tournament size on the Genetic Algorithm.
  
  Consequently, our goal in this paper is to observe the performance of the tournament selection in a real-valued Genetic Algorithm. For that we applied the Genetic Algorithm to 24 noise-free BBOB benchmark functions with 10, 20 and 40 dimensions~\cite{hansen2010real}. We explore the number of solutions to be selected by the Tournament operator, with values from 2 to 25. Then we analyze the results to verify any relationship among the tournament size value, the benchmark functions, and the performance. We also explore briefly the idea that the value of the tournament size value had different effects at different points in the algorithm.

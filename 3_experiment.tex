@@ -5,7 +5,7 @@
 To test the influence of the tournament size we implemented a simple real-valued Genetic Algorithm to explore the search space of the 24 noise free N dimension BBOB benchmark functions~\cite{hansen2010real}.
 
 \subsubsection*{Genome Representation and Evolutionary Tools.}
-Each solution is represented as real valued array, where each element is one input to a N dimension noise free benchmark BBOB function. Therefore, each solution of the GA has size of N real value elements. Each solution's values is set to the be into the interval [-4, 4], since the target functions are bounded by these values. It uses the Uniform crossover, elitism and Gaussian mutation as evolutionary operators. The relevant parameters were set as in the Table~\ref{relevant_par} and Table~\ref{gaussian_par}.
+Each solution is represented as real valued array, where each element is one input to a N dimension noise free benchmark BBOB function. Therefore, each solution of the GA has size of N real value elements. Each solution's values is set to the be into the interval [-5, 5], since the target functions are bounded by these values. It uses the Uniform crossover or the SBX crossover, elitism and Gaussian mutation as evolutionary operators. The relevant parameters were set as in the Table~\ref{relevant_par} and Table~\ref{gaussian_par}.
 
 \vspace{3mm}
 \begin{table}[!ht]
@@ -39,27 +39,11 @@ Each solution is represented as real valued array, where each element is one inp
 The fitness function considered are the N dimensions noise free benchmark BBOB function~\cite{hansen2010real}.
 
 
-\subsubsection*{Implementation Details.}
-Chuang et al.~\cite{chuang2012black}, proposed a Genetic Algorithm specific to run on the noise free BBOB benchmark functions. Some good practices presented in this work were incorporated to the GA. These practice are the concept of ``restart strategy'' and the concept of ``alleviate stagnation''.
+We observed that the BBOB Functions can be separated in Unimodal or multimodal, where a unimodal function is a function with only one local optimum (that is equal to the global optimum) while multimodal means that the function has many local optimum. In our experiments, we consider that the impact the results may be different acknowledged the 2 groups and therefore we analyze the results by grouping all functions all together and by separating them into unimodal or multimodal. 
 
-The restart strategy concept is defined by Chuang et al. as: ``For each restart, the initial population  is uniformly and randomly sampled within the search space. Whenever the restart condition is met, the algorithm will be reinitialized without using any information about the last test run. This process is iterated until the stopping criteria are met, i.e., maximum number of function evaluations has been reached, or the function value is less than the target precision.''
+The multimodal functions are~\cite{hansen2010real}: Rastrigin Function, Weierstrass Function, Schaffers Function, Schaffers Function ,moderately ill-conditioned, Composite Griewank-Rosenbrock Function F8F2, Schwefel Function, Gallagher's Gaussian 101-me Peaks Function, Gallagher's Gaussian 21-hi Peaks Function, Katsuura Function, and Lunacek bi-Rastrigin Function.
 
-The restart condition used in the GA is value of the standard deviation of the current population. If it is smaller that $10^{-12}$, then the restart condition is triggered. In this case the algorithm population is reinitialized randomly, as it is in the first initialization. 
-
-In the GA, we consider information about the last run, by utilizing the Elitism strategy on the best solution prior to the restart. The maximum number of function evaluations chosen is ($4 * 10^5$) and the target precision chosen is ($10^{-8}$), values compatible with the ones in the previous work.
-
-%\subsubsection*{Genetic Algorithms and Benchmarks Functions.}
-%
-%In 2009, Nicolau~\cite{nicolau2009application} proposed the first Genetic Algorithm on the BBOB-2009 noiseless testbed. It was a simple binary Genetic Algorithm and its results showed good results on separable functions, but poor performance is achieved on the other functions.
-%
-%In 2012, Chuang et al.~\cite{chuang2012black} presented the ``DBRCGA''. Their results showed that the DBRCGA performs with difficulty in getting a solution with the desired accuracy for high conditioning and multimodal functions within the specified maximum number of evaluations, the DBRCGA presents good performance in separable function and functions with low or moderate conditioning.
-%
-%In 2013, Holtschulte et al.~\cite{holtschulte2013benchmarking} evaluated two Genetic Algorithm on the BBOB-2013 noiseless testbed. Their results highlight the importance of carefully chosen genetic operators.
-%
-%Sawyerr et al found simliar results to the one achieved by Chuang et al. on their works in 2013~\cite{sawyerr2013benchmarking} and in 2015~\cite{sawyerr2015benchmarking}. Both the PRCGA and the RCGAu were tested on the BBOB-2013 noiseless testbed. They stated that both of them had difficulties to achieve solutions with the desired accuracy for high conditioning and multimodal functions. They also state that real value GA do not efficiently solve highly conditioned problems and studies have currently been carried out to find out why~\cite{sawyerr2015benchmarking}.
-%
-
-
+While the unimodal functions are: Ellipsoidal Function, Linear Slope, Atractive Sector Function,  Step Ellipsoidal Function, Rosenbrock Function - original, Rosenbrock Function - rotated, Discus Function, Bent Cigar Function, Sharp Ridge Function, and Different Powers Function.
 
 \label{sec:experiment}
 
@@ -70,11 +54,11 @@ We used the Friedman Test to determine whether any of the for the tournament siz
 
 \subsubsection*{Fixed tournament size}
 
-To analyze the impact of the tournament size into the GA in terms of quality of result, the following experiments were performed. First we analyze different values for the tournament size applied to the BBOB benchmark functions with 10, 20 and 40 dimensions. The tournament sizes were select, arbitrarily, from 2 to 25. For each combination of BBOB benchmark function, dimension, and tournament size we performed 40 repetitions and used the mean final result as the performance for that combination.
+To analyze the impact of the tournament size into the GA in terms of quality of result, the following experiments were performed. First we analyze different values for the tournament size applied to the BBOB benchmark functions with 10, 20 and 40 dimensions. The tournament sizes were select, arbitrarily, from 2 to 25. For each combination of BBOB benchmark function, dimension, and tournament size we performed 34 repetitions and used the mean final result as the performance for that combination.
 
-%
-%\subsubsection*{Generation-dependent tournament size}
-%
-%To analyze the impact of chaging the tournament size \textit{during} the execution of the GA in therms of quality of result, the following experiments were performed. We start with the tournament size equal to 2, as many of the work cited on section~\ref{sec:background:tournament_size}. Then when half of the evaluations are completed, the tournament size is changed to another value, chosen from 2 to 25. These values were applied to the BBOB benchmark functions with 40 dimensions. For each combination of BBOB benchmark functions, dimensions, and final tournament size we performed 40 repetitions.
-%
-%
+
+\subsubsection*{Generation-dependent tournament size}
+
+To analyze the impact of chaging the tournament size \textit{during} the execution of the GA in therms of quality of result, the following experiments were performed. We start with the tournament size equal to 2, as many of the work cited on section~\ref{sec:background:tournament_size}. Then when half of the evaluations are completed, the tournament size is changed to another value, chosen from 2 to 25. These values were applied to the BBOB benchmark functions with 40 dimensions. For each combination of BBOB benchmark functions, dimensions, and final tournament size we performed 34 repetitions.
+
+
