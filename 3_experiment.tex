@@ -5,7 +5,7 @@
 To test the influence of the tournament size we implemented a simple real-valued Genetic Algorithm to explore the search space of the 24 noise free N dimension BBOB benchmark functions~\cite{hansen2010real}.
 
 \subsubsection*{Genome Representation and Evolutionary Tools.}
-Each solution is represented as real valued array, where each element is one input to a N dimension noise free benchmark BBOB function. Therefore, each solution of the GA has size of N real value elements. Each solution's values is set to the be into the interval [-5, 5], since the target functions are bounded by these values. It uses the Uniform crossover or the SBX crossover, elitism and Gaussian mutation as evolutionary operators. The relevant parameters were set as in the Table~\ref{relevant_par} and Table~\ref{gaussian_par}.
+Each solution is represented as real valued array, where each element is one input to a N dimension noise free benchmark BBOB function. Therefore, each solution of the GA has size of N real value elements. Each solution's values is set to the be into the interval [-5, 5], since the target functions are bounded by these values. We considerer two crossover operators when experimenting with the GA: the Uniform crossover and the Simulated Binary crossover (SBX). The other evolutionary operators are elitism and Gaussian mutation. The relevant parameters were set as in the Table~\ref{relevant_par} and Table~\ref{gaussian_par}.
 
 \vspace{3mm}
 \begin{table}[!ht]
@@ -13,7 +13,7 @@ Each solution is represented as real valued array, where each element is one inp
 	\begin{tabular}{|l|l|}
 	\hline
 	Number of Evaluations & 40000 \\ \hline
-	Population Size &  500		\\ \hline
+	Population Size &  800		\\ \hline
 	Crossover chance 	& 0.9	\\ \hline
 	Mutation Chance 	& 0.1	\\ \hline		
 	Elitism size 		& 1		\\ \hline		
@@ -38,6 +38,8 @@ Each solution is represented as real valued array, where each element is one inp
 \subsubsection*{Fitness Function.}
 The fitness function considered are the N dimensions noise free benchmark BBOB function~\cite{hansen2010real}.
 
+\subsubsection*{Generational Scheme.}
+Two generation schemes were used. In te first generation scheme, scheme A, the next population is replaced entirely by the generated population, while in the second generation scheme, scheme B, the best possible solutions from the current \textit{and} the generation population are chosen to compose the next population.
 
 We observed that the BBOB Functions can be separated in Unimodal or multimodal, where a unimodal function is a function with only one local optimum (that is equal to the global optimum) while multimodal means that the function has many local optimum. In our experiments, we consider that the impact the results may be different acknowledged the 2 groups and therefore we analyze the results by grouping all functions all together and by separating them into unimodal or multimodal. 
 
@@ -48,17 +50,12 @@ While the unimodal functions are: Ellipsoidal Function, Linear Slope, Atractive 
 \label{sec:experiment}
 
 \subsection{Experiments}
-We made two experiments aiming to verify the impact of different values for the tournament size. In the first experiment, we analyzed the relation between the tournament size and the performance on the BBOB benchmark functions. In the second experiment, we analyze the impact of changing the values of the tournament size \textit{during} the execution.
+We made a experiment aiming to verify the impact of different values for the tournament size. In the first experiment, we analyzed the relation between the tournament size and the performance on the BBOB benchmark functions, when combined with the Uniform crossover or with the SBX. 
 
 We used the Friedman Test to determine whether any of the for the tournament size show a significant difference in the average performance. In each of these tests, we set $\alpha = 0.05$. For this analysis, the dependent variable being the average performance, the blocking variable is the BBOB function number and the treatment variable is the tournament size value.
 
-\subsubsection*{Fixed tournament size}
-
-To analyze the impact of the tournament size into the GA in terms of quality of result, the following experiments were performed. First we analyze different values for the tournament size applied to the BBOB benchmark functions with 10, 20 and 40 dimensions. The tournament sizes were select, arbitrarily, from 2 to 25. For each combination of BBOB benchmark function, dimension, and tournament size we performed 34 repetitions and used the mean final result as the performance for that combination.
 
 
-\subsubsection*{Generation-dependent tournament size}
 
-To analyze the impact of chaging the tournament size \textit{during} the execution of the GA in therms of quality of result, the following experiments were performed. We start with the tournament size equal to 2, as many of the work cited on section~\ref{sec:background:tournament_size}. Then when half of the evaluations are completed, the tournament size is changed to another value, chosen from 2 to 25. These values were applied to the BBOB benchmark functions with 40 dimensions. For each combination of BBOB benchmark functions, dimensions, and final tournament size we performed 34 repetitions.
-
+%\subsubsection*{Generation-dependent tournament size}
 
