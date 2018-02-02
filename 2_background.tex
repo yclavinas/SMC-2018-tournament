@@ -1,31 +1,37 @@
 %TODO: include the ref to bbob functions
-\section{Tournament Selection}\label{sec:background:Selection Scheme} 
+\section{The Tournament Selection}\label{sec:background:Selection Scheme} 
 
-The selection scheme is intended to improve the average quality of the GA by giving solutions of higher quality a higher probability of composing the next generation~\cite{blickle1995mathematical}.
 
-Goldberg and Deb~\cite{goldberg1991comparative} stated that there exists several selection schemes commonly used in GA, such as the rank selection, the roulette-wheel selection and the tournament selection. They also declare that the complexity of the tournament selection is O(n) and say that tournaments are often held with tournament size s = 2, although larger tournament sizes may be considered.
+
+A selection scheme is a process that aims to improve the average quality of the GA by giving solutions of higher quality a higher probability of composing the next generation~\cite{blickle1995mathematical}.  The tournament selection, as any selection mechanism in GA, simply favors the selection of better individuals of a population to influence the next generation.
+
+Tournament Selection is a selection scheme that has a unique set of characteristic that makes it a very popular choice~\cite{blickle1995mathematical}. It is simple to code and its complexity is O(n)~\cite{goldberg1991comparative} which makes it efficient for both nonparallel and parallel architectures. It can increase (decrease) the selection pressure by increasing (decreasing) the tournament size.
+
+ The tournament selection is also translation and scaling invariant~\cite{maza1993analysis}, which means that the behavior of the selection scheme is not affect by the scale of the fitness values~\cite{back2000evolutionary}.
+% as Miller et al. declared in their study\textsc{}
+
+The tournament selection is able to do adjust the selection pressure and can do that easily, because it's only control parameter influences directly the selection pressure. That is an important feature, because any selection scheme should have is the capacity of being able to adjust its selection pressure given different domains. Even so often tournaments are held only between two individuals (binary tournament) but a generalization is possible to an arbitrary group size k called tournament size~\cite{blickle1995mathematical, goldberg1991comparative}. We verified that using binary tournaments  is still a popular choice. 
 
 \subsection{The Tournament Selection Procedure}\label{sec:background:tournament_selection} 
 
-Tournament selection is translation and scaling invariant~\cite{maza1993analysis}. That means that the behavior of the selection method is not affect by the scale of the fitness values~\cite{back2000evolutionary}.
+
 
 Tournament selection is conducted as: choose a number $K$ of solutions randomly from the population and select the best solution from this group as a parent for the crossover operator. Repeat this operation for each parent necessary. This $K$ is the tournament size parameter that we investigate in this paper.
 
-Often tournaments are held only between two individuals (binary tournament) but a generalization is possible to an arbitrary group size k called tournament size~\cite{blickle1995mathematical, goldberg1991comparative}. A tournament selection, as any selection mechanism in GA, simply favors the selection of better individuals of a population to influence the next generation. 
+
 
 
 \subsection{Selection Schemes and BBOB functions}
 
 
+
 Holtschulte and Moses, in~\cite{holtschulte2013benchmarking} used rank selection in their GA implementation and applied it to the BBOB functions. They declared that rank selection should be replaced by an elitism selection scheme to improve the performance of their GA implementation by spreading of high quality solutions through the population. 
 
-One of these elitist selection scheme is the fitness-based roulette-wheel. However, it has been shown to lead to premature convergence~\cite{baker1987reducing}. Nicolau, ~\cite{nicolau2009application} uses the tournament selection in his GA aiming to solve the BBOB functions. He declares ``for harder problem domains, such as the ones on the BBOB-Benchmark suite, the tournament selection scheme is more appropriate.''.
+The roulette-wheel and the tournament selection are two of these elitist selection schemes. However, it has been shown that roulette-wheel leads to premature convergence~\cite{baker1987reducing}. 
 
-Then, in this work we chose to analyze the tournament selection behavior in the BBOB functions.
+Nicolau, ~\cite{nicolau2009application} used the tournament selection in his GA with the goal of solving the BBOB functions. He declares ``for harder problem domains, such as the ones on the BBOB-Benchmark suite, the tournament selection scheme is more appropriate.''.
 
-
-Also, tournament selection is said to be simple to code, efficient in both parallel and non parallel architectures, and its pressure is able to be adjusted for different domains~\cite{miller1995genetic}.
-
+These two studies in addition to the tournament selection popularity and its power to be adjusted for different domains, give us motive to analyze the tournament selection behavior in the BBOB functions.
 
 
 \subsection{Tournament Pressure}\label{sec:background:tournament_pressure} 
@@ -37,20 +43,19 @@ We understand that it is important to explore the values for tournament size, si
 
 \subsection{Tournament Size in the Literature}\label{sec:background:tournament_size} 
 
-In 1991, Goldberg~\cite{goldberg1991real}, analyzed the tournament selection with size 2 in a real-coded GA. He recognized, empirically, that after some time only individuals with relatively high function values will be represented in the population. Also he compares the importance of mutation operators and the tournament selection operator and states that ``the addition of some small amount of creeping mutation or other genetic operators should not materially affect these results''.
+In 1991, Goldberg~\cite{goldberg1991real}, analyzed the tournament selection with size 2 in a real-coded GA. He recognized empirically that after some time only individuals with relatively high function values would be represented in the population. He recognizes that selection may emphasize highly fit individuals leading to a small number of alternatives considered.
 
-
-Agrawal~\cite{agrawal1995simulated}, in 1995, implemented real-coded GA with tournament selection with size 2. Their goal was to compare the results of the simulated binary crossover (SBX) with the binary single-point crossover and the blend crossover. They concluded that the SBX has search power similar to the single-point crossover and the SBX performs better in difficult test functions than the blend crossover. 
+Agrawal~\cite{agrawal1995simulated}, in 1995, implemented real-coded GA with tournament selection with size 2. Their goal was to compare the results of the simulated binary crossover (SBX) with the binary single-point crossover and the blend crossover. They concluded that the SBX has search power similar to the single-point crossover and the SBX performs better in difficult test functions than the blend crossover. They understand that for some functions the selection pressure is not enough.
 
 In 1999, Tsutsui et al.~\cite{tsutsui1999multi} proposed a simplex crossover (SPX), a multi-parent recombination operator for real-coded genetic algorithms. For their experiments, they used a real-coded GA with tournament selection with size 2 and showed that ``SPX works well on functions having multi modality and/or epistasis with a medium number of parents: 3-parent on a low dimensional function or 4 parents on high dimensional functions.''. 
 
-Later, in 2000, Deb~\cite{deb2000efficient}, implemented a binary GA and a real-coded GA, with tournament size 2. He aimed to devise a penalty function approach that does require any penalty parameter. Because all of their search spaces are defined in the real space, the real-coded GA was more suited in finding feasible solutions, but in all cases, this approach `` [has] a niche over classical methods to handle constraints''.
+Later, in 2000, Deb~\cite{deb2000efficient}, implemented a binary GA and a real-coded GA, with tournament size 2. He aimed to devise a penalty function approach that does not require any penalty parameter. Because all of their search spaces are defined in the real space, the real-coded GA was more suited in finding feasible solutions, but in all cases, this approach `` [has] a niche over classical methods to handle constraints''. The concluded with declaring that some parametric study should be done on the important parameters to improve the performance.
+
+%Bhunia et al.~\cite{bhunia2009application}, in 2009, created a tournament GA application to solve an economic production lot-size (EPL) model. In their study, the tournament selection is used to produce a better population from the existing two populations. 
 
 
 In 2001, Beyer et al.~\cite{beyer2001self}, analyzed the results of using the simulated binary crossover (SBX), the fuzzy recombination operator and the blend crossover (BLX), all with no mutation and tournament size 2 in a real-coded GA. The results indicated that those crossovers exhibit similar performance and linear convergence order.
 
-
-Bhunia et al.~\cite{bhunia2009application}, in 2009, created a tournament GA application to solve an economic production lot-size (EPL) model. 
 
 Sawyerr et al.~\cite{sawyerr2015benchmarking}, in 2015, proposed the RCGAu, hybrid real-coded genetic algorithm with ``uniform random direction'' search mechanism. They used tournament selection with size 3 to explore the suite of noiseless black-box optimization testbed and the results showed great performance in some functions as $f_7$ and $f_{21}$.
 
