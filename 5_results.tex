@@ -1,10 +1,9 @@
 \section{Results}\label{sec:results}
 
-\subsection{Generational Scheme A}
-The Friedman Test showed no significant difference in values among tournament size values across all functions with 40 dimensions, for any configuration, with the uniform crossover. This results hold for every scenario, given: all functions (unimodal or multimodal); only the unimodal functions; or only the multimodal functions. 
+\subsection{($\lambda, \lambda$) scheme}
 
-When considering 10 or 20 dimensions, the results vary more. For the unimodal functions no significant difference was found. But when multimodal functions are considered, there is a significant difference in the results. Also while considering all functions (unimodal or multimodal) a even higher significant difference in the results was found. Detailed data can be visualized on the following Table~\ref{Friedman_test_uniform}. 
 
+The Friedman Test showed significant difference in values among tournament size values across all functions, for any configuration, with the uniform crossover. This results hold for every scenario with 10, 20, and 40 dimensions, given: all functions (unimodal or multimodal); or only the multimodal functions. There is except when considering the results with the uniform crossover, for the unimodal group of functions. Also, for group of all function with 40 dimensions and the uniform crossover, there was found no significant difference in the results. The results can be better analyzed in the following Tables~\ref{Friedman_test_uniformed}, ~\ref{Friedman_test_sbx}.
 
 
 \begin{table}[h]
@@ -24,12 +23,9 @@ When considering 10 or 20 dimensions, the results vary more. For the unimodal fu
 		\multicolumn{1}{|l|}{Unimodal} & \multicolumn{1}{|l|}{40} & \multicolumn{1}{l|}{22.3} & \multicolumn{1}{l|}{0.4421} \\ \hline
 		\multicolumn{1}{|l|}{Multimodal} & \multicolumn{1}{|l|}{40} & \multicolumn{1}{l|}{37.091} & \multicolumn{1}{l|}{0.02312}  \\ \hline
 	\end{tabular}
-	\caption{Friedman Test results for Uniform Crossover - Generational Scheme A.}
+	\caption{Friedman Test results for Uniform Crossover - ($\lambda, \lambda$) scheme.}
 	\label{Friedman_test_uniform}	
 \end{table}
-
-For the SBX crossover with 10, 20 or 40 dimensions there is a significant difference in the results, when considering: all functions (unimodal or multimodal); only the unimodal functions; or only the multimodal functions. Detailed data can be visualized on the following Table~\ref{Friedman_test_sbx}. 
-
 
 
 \begin{table}[h]
@@ -49,67 +45,67 @@ For the SBX crossover with 10, 20 or 40 dimensions there is a significant differ
 		\multicolumn{1}{|l|}{Unimodal} & \multicolumn{1}{|l|}{40} & \multicolumn{1}{l|}{144.89} & \multicolumn{1}{l|}{< 2.2e-16} \\ \hline
 		\multicolumn{1}{|l|}{Multimodal} & \multicolumn{1}{|l|}{40} & \multicolumn{1}{l|}{118.46} & \multicolumn{1}{l|}{3.316e-15}  \\ \hline
 	\end{tabular}
-	\caption{Friedman Test results for SBX Crossover - Gen. Scheme A.}
+	\caption{Friedman Test results for SBX Crossover - ($\lambda, \lambda$) scheme.}
 	\label{Friedman_test_sbx}	
 \end{table}
 
 \begin{figure*}[t]
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/multimodal_sbx_22_dim_20.pdf}
+		\includegraphics[width=\textwidth]{img/SBX-10D/multimodal_sbx_22_dim_10.pdf}
 		\caption{10 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-			\includegraphics[width=\textwidth]{img/multimodal_sbx_22_dim_20.pdf}
+			\includegraphics[width=\textwidth]{img/SBX-20D/multimodal_sbx_22_dim_20.pdf}
 		\caption{20 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/multimodal_sbx_22_dim_40.pdf}
+		\includegraphics[width=\textwidth]{img/SBX-40D/multimodal_sbx_22_dim_40.pdf}
 		\caption{40 dimensions.}
 	\end{subfigure}
-	\caption{Average performance on different tournament size for the Gallagher's Gaussian 21-hi Peaks Function, when using the SBX crossover - Gen. Scheme A.}
+	\caption{Average performance on different tournament size for the Gallagher's Gaussian 21-hi Peaks Function, when using the SBX crossover - ($\lambda, \lambda$) scheme.}
 	\label{sbx-22}
 \end{figure*}
 
 \begin{figure*}[t]
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/multimodal_uniform_22_dim_20.pdf}
+		\includegraphics[width=\textwidth]{img/uniform-10D/multimodal_uniform_22_dim_10.pdf}
 		\caption{10 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/multimodal_uniform_22_dim_20.pdf}
+		\includegraphics[width=\textwidth]{img/uniform-20D/multimodal_uniform_22_dim_20.pdf}
 		\caption{20 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/multimodal_uniform_22_dim_40.pdf}
+		\includegraphics[width=\textwidth]{img/uniform-40D/multimodal_uniform_22_dim_40.pdf}
 		\caption{40 dimensions.}
 	\end{subfigure}
-	\caption{Average performance on different tournament size for the Gallagher's Gaussian 21-hi Peaks Function, when using the uniform crossover - Gen. Scheme A.}
+	\caption{Average performance on different tournament size for the Gallagher's Gaussian 21-hi Peaks Function, when using the uniform crossover - ($\lambda, \lambda$) scheme.}
 	\label{uniform-22}
 \end{figure*}
 
 \begin{figure*}[t]
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/unimodal_sbx_11_dim_40.pdf}
+		\includegraphics[width=\textwidth]{img/SBX-10D/unimodal_sbx_11_dim_10.pdf}
 		\caption{10 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/unimodal_sbx_11_dim_20.pdf}
+		\includegraphics[width=\textwidth]{img/SBX-20D/unimodal_sbx_11_dim_20.pdf}
 		\caption{20 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/unimodal_sbx_11_dim_40.pdf}
+		\includegraphics[width=\textwidth]{img/SBX-40D/unimodal_sbx_11_dim_40.pdf}
 		\caption{40 dimensions.}
 	\end{subfigure}
-	\caption{Average performance on different tournament size for the Discus Function, when using the SBX crossover - Gen. Scheme A.}
+	\caption{Average performance on different tournament size for the Discus Function, when using the SBX crossover -($\lambda, \lambda$) scheme.}
 	\label{sbx-11}
 \end{figure*}
 
@@ -117,20 +113,20 @@ For the SBX crossover with 10, 20 or 40 dimensions there is a significant differ
 \begin{figure*}[t]
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/unimodal_uniform_11_dim_40.pdf}
+		\includegraphics[width=\textwidth]{img/uniform-10D/unimodal_uniform_11_dim_10.pdf}
 		\caption{10 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/unimodal_uniform_11_dim_20.pdf}
+		\includegraphics[width=\textwidth]{img/uniform-20D/unimodal_uniform_11_dim_20.pdf}
 		\caption{20 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/unimodal_uniform_11_dim_40.pdf}
+		\includegraphics[width=\textwidth]{img/uniform-40D/unimodal_uniform_11_dim_40.pdf}
 		\caption{40 dimensions.}
 	\end{subfigure}
-	\caption{Average performance on different tournament size for the Discus Function, when using the uniform crossover - Gen. Scheme A.}
+	\caption{Average performance on different tournament size for the Discus Function, when using the uniform crossover - ($\lambda, \lambda$) scheme.}
 	\label{uniform-11}
 \end{figure*}
 
@@ -151,23 +147,23 @@ The gray shaded area represents the 95\% confidence level interval for predictio
 The Figures~\ref{convegence-11} and~\ref{convergence-23} exemplify that for the Discus Function with 40 dimensions and with the SBX crossover the GA is converging towards the optimum target value, represented by the bottom, red, horizontal line. The same convergence is observed with the uniform crossover for the Katsuura Function. We found similar behavior in most of the functions, given any crossover operator.
 
 \begin{figure}[t]
-	\includegraphics[width=0.5\textwidth]{img/Uniform_convergence_40D_DiscusF.pdf}
+	\includegraphics[width=0.5\textwidth]{img/uniform-40D/covergency_unimodal_uniform_11_dim_40.pdf}
 	\caption{Population convergence for Discus Function.}
-	\label{convegence-11}
+	\label{convegence-uniform-11}
 \end{figure}
 
 
 \begin{figure}[t]
-	\includegraphics[width=0.5\textwidth]{img/Sbx_convergence_40D_katsuuraF.pdf}
+	\includegraphics[width=0.5\textwidth]{img/SBX-40D/covergency_multimodal_sbx_23_dim_40.pdf}
 	\caption{Population convergence for Katsuura Function.}
 	\label{convergence-23}
 \end{figure}
 
 
-\subsection{Generational Scheme B}
+\subsection{($\lambda + \lambda$) scheme}
 
 
-The Friedman Test showed no significant difference in values among tournament size values across all functions, for any configuration, with the SBX crossover. This results hold for every scenario with 40 dimensions, given: all functions (unimodal or multimodal); only the unimodal functions; or only the multimodal functions. 
+The Friedman Test showed significant difference in values among tournament size values across all functions, for any configuration, with the SBX crossover. This results hold for every scenario with 40 dimensions, given: all functions (unimodal or multimodal); only the unimodal functions; or only the multimodal functions. 
 
 \begin{table}[h]
 	\centering
@@ -186,50 +182,50 @@ The Friedman Test showed no significant difference in values among tournament si
 		\multicolumn{1}{|l|}{Unimodal} & \multicolumn{1}{|l|}{40} & \multicolumn{1}{l|}{101.52} & \multicolumn{1}{l|}{3.502e-12} \\ \hline
 		\multicolumn{1}{|l|}{Multimodal} & \multicolumn{1}{|l|}{40} & \multicolumn{1}{l|}{87.318} & \multicolumn{1}{l|}{9.762e-10}  \\ \hline
 	\end{tabular}
-	\caption{Friedman Test results for SBX Crossover - Gen. Scheme B.}
+	\caption{Friedman Test results for SBX Crossover - ($\lambda + \lambda$) scheme.}
 	\label{Friedman_test_uniform-B}	
 \end{table}
 
-As for the generation Scheme A, we show visual examples to get a finer intuition about the results, we show  some visual examples, separated in two groups of Figures. The first group, shows the mean value achieved by the GA given a function. The second one, shows the convergence plot with the mean of the values found at each generation, the function target value with a given tournament size. All Figures represent the mean of 30 repetitions given a certain dimension.
+As for the generation ($\lambda, \lambda$), we show visual examples to get a finer intuition about the results, we show  some visual examples, separated in two groups of Figures. The first group, shows the mean value achieved by the GA given a function. The second one, shows the convergence plot with the mean of the values found at each generation, the function target value with a given tournament size. All Figures represent the mean of 30 repetitions given a certain dimension.
 
 
 \begin{figure*}[t]
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/multimodal_2n2n_22_dim_40.pdf}
+		\includegraphics[width=\textwidth]{img/2n2n-10D/multimodal_2n2n_22_dim_10.pdf}
 		\caption{10 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/multimodal_2n2n_22_dim_40.pdf}
+		\includegraphics[width=\textwidth]{img/2n2n-20D/multimodal_2n2n_22_dim_20.pdf}
 		\caption{20 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/multimodal_2n2n_22_dim_40.pdf}
+		\includegraphics[width=\textwidth]{img/2n2n-40D/multimodal_2n2n_22_dim_40.pdf}
 		\caption{40 dimensions.}
 	\end{subfigure}
-	\caption{Average performance on different tournament size for the Gallagher's Gaussian 21-hi Peaks Function, when using the SBX crossover - Gen. Scheme B.}
+	\caption{Average performance on different tournament size for the Gallagher's Gaussian 21-hi Peaks Function, when using the SBX crossover - ($\lambda + \lambda$) scheme.}
 	\label{sbx-22-B}
 \end{figure*}
 
 \begin{figure*}[t]
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/unimodal_2n2n_11_dim_40.pdf}
+		\includegraphics[width=\textwidth]{img/2n2n-10D/unimodal_2n2n_11_dim_10.pdf}
 		\caption{10 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/unimodal_2n2n_11_dim_40.pdf}
+		\includegraphics[width=\textwidth]{img/2n2n-20D/unimodal_2n2n_11_dim_20.pdf}
 		\caption{20 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/unimodal_2n2n_11_dim_40.pdf}
+		\includegraphics[width=\textwidth]{img/2n2n-40D/unimodal_2n2n_11_dim_40.pdf}
 		\caption{40 dimensions.}
 	\end{subfigure}
-	\caption{Average performance on different tournament size for the Discus Function, when using the SBX crossover - Gen. Scheme B.}
+	\caption{Average performance on different tournament size for the Discus Function, when using the SBX crossover - ($\lambda + \lambda$) scheme.}
 	\label{sbx-11-B}
 \end{figure*}
 
@@ -242,9 +238,9 @@ The gray shaded area represents the 95\% confidence level interval for predictio
 
 \subsection{Convergence Analysis}
 The Figures~\ref{convegence-11} and~\ref{convergence-23} exemplify that for the Discus Function with 40 dimensions and with the SBX crossover the GA is converging towards the optimum target value, represented by the bottom, red, horizontal line. The same convergence is observed with the uniform crossover for the Katsuura Function. We found similar behavior in most of the functions, given any crossover operator.
-%
-%\begin{figure}[t]
-%	\includegraphics[width=0.5\textwidth]{img/Uniform_convergence_40D_DiscusF.pdf}
-%	\caption{Population convergence for Discus Function.}
-%	\label{convegence-11}
-%\end{figure}
+
+\begin{figure}[t]
+	\includegraphics[width=0.5\textwidth]{img/2n2n-40D/covergency_unimodal_2n2n_11_dim_40.pdf}
+	\caption{Population convergence for Discus Function.}
+	\label{convegence-11}
+\end{figure}
