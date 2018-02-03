@@ -1,0 +1,56 @@
+\section{Experiment Design}
+
+\subsection{The Genetic Algorithm}\label{sec:proposed:ga}
+
+To test the influence of the tournament size we implemented a simple real-valued Genetic Algorithm to explore the search space of the 24 noise free N dimension BBOB benchmark functions~\cite{hansen2010real}.
+
+\subsubsection*{Genome Representation and Evolutionary Tools.}
+Each solution is represented as real valued array, where each element is one input to a N dimension noise free benchmark BBOB function. Therefore, each possible solution of the GA has size of N real value elements. The values of any solution are defined to the be into the interval [-5, 5], since the target functions are bounded by these interval	. We considerer two crossover operators when experimenting with the GA: the Uniform crossover and the Simulated Binary crossover (SBX). The other evolutionary operators are elitism and Gaussian mutation. The relevant parameters were set as in the Table~\ref{relevant_par} and Table~\ref{gaussian_par}.
+
+\vspace{3mm}
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|l|l|}
+	\hline
+	Number of Evaluations & 40000 \\ \hline
+	Population Size &  800		\\ \hline
+	Crossover chance 	& 0.9	\\ \hline
+	Mutation Chance 	& 0.1	\\ \hline		
+	Elitism size 		& 1		\\ \hline		
+	\end{tabular}
+	\caption{GA Relevant Parameters}
+	\label{relevant_par}
+\end{table}
+	\vspace{-2mm}
+%
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|l|l|}
+	\hline
+		Mean & 0 \\ \hline		
+		Standard Deviation & 1 \\ \hline		
+		Ind. Prob. Attribute to be Mutated &  0.1 \\ \hline		
+	\end{tabular}
+	\caption{Gaussian Mutation parameters}
+	\label{gaussian_par}
+\end{table}
+
+\subsubsection*{Fitness Function.}
+The fitness function considered are the N dimensions noise free benchmark BBOB functions~\cite{hansen2010real}.
+
+
+
+
+
+\subsubsection*{Generational Scheme.}
+Two generation schemes were used. In te first generation scheme, \textbf{scheme A}, the next population is replaced entirely by the \textit{generated offspring}. In the second generation scheme, \textbf{scheme B}, the next population is composed by the group of best solutions from both the \textit{current population and from the the generated offspring}.
+
+\label{sec:experiment}
+
+\subsection{Experiments}
+We made two experiments aiming to verify the impact of different values for the tournament size. In the first experiment, we analyzed the relation between the tournament size and the performance on the BBOB benchmark functions with 10, 29 and 40 dimensions, when combined with the Uniform crossover or with the SBX, with the generational scheme A. Then, we analyzed the same relation from before with the same functions and dimensions, but with the generational scheme B and only the SBX crossover. We consider that the impact the results may be different acknowledged the 2 groups of functions and therefore we analyze the results by grouping all functions togethert, or the unimodal functions or the multimodal functions. 
+
+We used the Friedman Test to determine whether any of the for the tournament size show a significant difference in the average performance. In each of these tests, we set $\alpha = 0.05$. For this analysis, the dependent variable being the average performance, the blocking variable is the BBOB function number and the treatment variable is the tournament size value.
+
+
+

@@ -1,9 +1,11 @@
 \section{Results}\label{sec:results}
 
 \subsection{Generational Scheme A}
-The Friedman Test showed no significant difference in values among tournament size values across all functions, for any configuration, with the uniform crossover. This results hold for every scenario with 40 dimensions, given: all functions (unimodal or multimodal); only the unimodal functions; or only the multimodal functions. 
+The Friedman Test showed no significant difference in values among tournament size values across all functions with 40 dimensions, for any configuration, with the uniform crossover. This results hold for every scenario, given: all functions (unimodal or multimodal); only the unimodal functions; or only the multimodal functions. 
 
-When considering 20 dimensions, the results vary more. For the unimodal functions no significant difference was found. But when multimodal functions are considered, there is a significant difference in the results. Also while considering all functions (unimodal or multimodal) a even higher significant difference in the results was found. Detailed data can be visualized on the following Table~\ref{Friedman_test_uniform}. 
+When considering 10 or 20 dimensions, the results vary more. For the unimodal functions no significant difference was found. But when multimodal functions are considered, there is a significant difference in the results. Also while considering all functions (unimodal or multimodal) a even higher significant difference in the results was found. Detailed data can be visualized on the following Table~\ref{Friedman_test_uniform}. 
+
+
 
 \begin{table}[h]
 	\centering
@@ -26,7 +28,8 @@ When considering 20 dimensions, the results vary more. For the unimodal function
 	\label{Friedman_test_uniform}	
 \end{table}
 
-For the SBX crossover with 40 or 20 dimensions there is a significant difference in the results, when considering: all functions (unimodal or multimodal); only the unimodal functions; or only the multimodal functions. Detailed data can be visualized on the following Table~\ref{Friedman_test_sbx}. 
+For the SBX crossover with 10, 20 or 40 dimensions there is a significant difference in the results, when considering: all functions (unimodal or multimodal); only the unimodal functions; or only the multimodal functions. Detailed data can be visualized on the following Table~\ref{Friedman_test_sbx}. 
+
 
 
 \begin{table}[h]
@@ -34,9 +37,9 @@ For the SBX crossover with 40 or 20 dimensions there is a significant difference
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		\textbf{Function Group} & \textbf{Dimension size}      & \textbf{Chi-squared}        & \textbf{P-value}                     \\ \hline
-		\multicolumn{1}{|l|}{All} & \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{ } & \multicolumn{1}{l|}{ } \\ \hline
-		\multicolumn{1}{|l|}{Unimodal} & \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{ } & \multicolumn{1}{l|}{ } \\ \hline
-		\multicolumn{1}{|l|}{Multimodal} & \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{ } & \multicolumn{1}{l|}{ }  \\ \hline
+		\multicolumn{1}{|l|}{All} & \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{128.77} & \multicolumn{1}{l|}{< 2.2e-16} \\ \hline
+		\multicolumn{1}{|l|}{Unimodal} & \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{49.997} & \multicolumn{1}{l|}{0.000587} \\ \hline
+		\multicolumn{1}{|l|}{Multimodal} & \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{81.653} & \multicolumn{1}{l|}{8.645e-09}  \\ \hline
 		\hline
 		\multicolumn{1}{|l|}{All} & \multicolumn{1}{|l|}{20} & \multicolumn{1}{l|}{182.09} & \multicolumn{1}{l|}{< 2.2e-16} \\ \hline
 		\multicolumn{1}{|l|}{Unimodal} & \multicolumn{1}{|l|}{20} & \multicolumn{1}{l|}{105.91} & \multicolumn{1}{l|}{5.893e-13} \\ \hline
@@ -58,7 +61,7 @@ For the SBX crossover with 40 or 20 dimensions there is a significant difference
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{img/multimodal_sbx_22_dim_20.pdf}
+			\includegraphics[width=\textwidth]{img/multimodal_sbx_22_dim_20.pdf}
 		\caption{20 dimensions.}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33\textwidth}
@@ -132,7 +135,7 @@ For the SBX crossover with 40 or 20 dimensions there is a significant difference
 \end{figure*}
 
 
-To get a finer intuition about the results, we show  some visual examples, separated in two groups of Figures. The first group, shows the mean value achieved by the GA given a function. The second one, shows the convergence plot with the mean of the values found at each generation, the function target value with a given tournament size. All Figures represent the mean of 34 repetitions given a certain dimension.
+To get a finer intuition about the results, we show  some visual examples, separated in two groups of Figures. The first group, shows the mean value achieved by the GA given a function. The second one, shows the convergence plot with the mean of the values found at each generation, the function target value with a given tournament size. All Figures represent the mean of 40 repetitions given a certain dimension.
 
 
 
@@ -141,7 +144,7 @@ The Figures~\ref{sbx-22} and ~\ref{uniform-22} exemplify that for the Gallagher'
 
 For the Discus Function, the Figures~\ref{sbx-11},~\ref{uniform-11}, (with 10, 20 and 40 dimensions) show that the same trend is observed. 
 
-The gray shaded area represents the 95\% confidence level interval for predictions from a linear model for each scenario showed and demonstrate that choosing small values for the tournament size, as 2 or 3 can be a very poor choice. For all Figures, the mean of 34 repetitions is shown as bullets and the red line is shows the objective target value for the function.
+The gray shaded area represents the 95\% confidence level interval for predictions from a linear model for each scenario showed and demonstrate that choosing small values for the tournament size, as 2 or 3 can be a very poor choice. For all Figures, the mean of 40 repetitions is shown as bullets and the red line is shows the objective target value for the function.
 
 
 \subsection{Convergence Analysis}
@@ -175,13 +178,13 @@ The Friedman Test showed no significant difference in values among tournament si
 		\multicolumn{1}{|l|}{Unimodal} & \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{31.565} & \multicolumn{1}{l|}{0.08512} \\ \hline
 		\multicolumn{1}{|l|}{Multimodal} & \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{17.486} & \multicolumn{1}{l|}{0.736}  \\ \hline
 		\hline
-		\multicolumn{1}{|l|}{All} & \multicolumn{1}{|l|}{20} & \multicolumn{1}{l|}{24.652} & \multicolumn{1}{l|}{0.314} \\ \hline
-		\multicolumn{1}{|l|}{Unimodal} & \multicolumn{1}{|l|}{20} & \multicolumn{1}{l|}{37.134} & \multicolumn{1}{l|}{0.02286} \\ \hline
-		\multicolumn{1}{|l|}{Multimodal} & \multicolumn{1}{|l|}{20} & \multicolumn{1}{l|}{15.598} & \multicolumn{1}{l|}{0.8353}  \\ \hline
+		\multicolumn{1}{|l|}{All} & \multicolumn{1}{|l|}{20} & \multicolumn{1}{l|}{48.859} & \multicolumn{1}{l|}{0.0008346} \\ \hline
+		\multicolumn{1}{|l|}{Unimodal} & \multicolumn{1}{|l|}{20} & \multicolumn{1}{l|}{76.822} & \multicolumn{1}{l|}{5.36e-08} \\ \hline
+		\multicolumn{1}{|l|}{Multimodal} & \multicolumn{1}{|l|}{20} & \multicolumn{1}{l|}{11.254} & \multicolumn{1}{l|}{0.9709}  \\ \hline
 		\hline	
-		\multicolumn{1}{|l|}{All} & \multicolumn{1}{|l|}{40} & \multicolumn{1}{l|}{29.284} & \multicolumn{1}{l|}{0.1369} 						\\ \hline
-		\multicolumn{1}{|l|}{Unimodal} & \multicolumn{1}{|l|}{40} & \multicolumn{1}{l|}{28.451} & \multicolumn{1}{l|}{0.1612} \\ \hline
-		\multicolumn{1}{|l|}{Multimodal} & \multicolumn{1}{|l|}{40} & \multicolumn{1}{l|}{26.725} & \multicolumn{1}{l|}{0.2219}  \\ \hline
+		\multicolumn{1}{|l|}{All} & \multicolumn{1}{|l|}{40} & \multicolumn{1}{l|}{269.01} & \multicolumn{1}{l|}{< 2.2e-16} 						\\ \hline
+		\multicolumn{1}{|l|}{Unimodal} & \multicolumn{1}{|l|}{40} & \multicolumn{1}{l|}{144.89} & \multicolumn{1}{l|}{< 2.2e-16} \\ \hline
+		\multicolumn{1}{|l|}{Multimodal} & \multicolumn{1}{|l|}{40} & \multicolumn{1}{l|}{118.46} & \multicolumn{1}{l|}{3.316e-15}  \\ \hline
 	\end{tabular}
 	\caption{Friedman Test results for SBX Crossover - Gen. Scheme B.}
 	\label{Friedman_test_uniform-B}	
@@ -234,7 +237,7 @@ As for the generation Scheme A, we show visual examples to get a finer intuition
 \subsection{Tournament Size by Functions Analysis}
 The Figure~\ref{sbx-22-B} that exemplifies that for the Gallagher's Gaussian 21-hi Peaks Function (with 10, 20 and 40 dimensions) changing the tournament size does not lead to significant better final values found by the GA. The Figure~\ref{sbx-11-B} shows the same trend, but for the Discus Function.
 
-The gray shaded area represents the 95\% confidence level interval for predictions from a linear model for each scenario showed and demonstrate that choosing small values for the tournament size, as 2 or 3 can be a very poor choice. For all Figures, the mean of 34 repetitions is shown as bullets and the red line is shows the objective target value for the function.
+The gray shaded area represents the 95\% confidence level interval for predictions from a linear model for each scenario showed and demonstrate that choosing small values for the tournament size, as 2 or 3 can be a very poor choice. For all Figures, the mean of 30 repetitions is shown as bullets and the red line is shows the objective target value for the function.
 
 
 \subsection{Convergence Analysis}
