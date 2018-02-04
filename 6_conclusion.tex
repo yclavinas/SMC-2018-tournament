@@ -2,9 +2,13 @@
 \label{sec:conclusion}
 
 
-We proposed an experimental analysis of the impact of the tournament size on the BBOB benchmark functions. We verified that there are little mathematical or experimental studies that supports a choice of value for the tournament size. Usually, the tournament size is chosen to be 2 or 3, based on ``previous results''.
+We proposed an experimental analysis of the impact of the tournament size on the BBOB benchmark functions. We verified that there are little mathematical or experimental studies that supports a choice of value for the tournament size. Usually, the tournament size is chosen to be 2 or 3, based on ``previous results''. 
  
-We analyzed a group of tournament size values on different selection operators and we found that using the tournament size with values like 2 or 3 may not be good choices, depending on the characteristic of the problem you are exploring.For that, we propose as future works that some sort of self-adaptative procedure should be tried, one that aims to minimize the impact of bad choice of values for the tournament size by adjusting this parameter on-line during the search process.
+We analyzed a group of tournament size values on different selection operators. We found in the results that using the tournament size with values like 2 or 3 may not be good choices, depending on the characteristic of the problem you are exploring. We showed evidences that support this affirmative. 
+
+Our experiments demonstrated that different problems behave differently according to the ``best''choice of the tournament value, with some having more benefit with higher values. Also we realized that for the same problems, the choice of the tournament value may alter with different dimensionality as well as with the generational scheme selected to compose the GA.
+
+For that, we propose as future works that some sort of self-adaptative procedure should be tried. We believe that using this technique may diminish the time spend on the design process, once it minimizes the impact of bad choice of values for the tournament size by adjusting this parameter on-line during the search process. Also, it would make the GA able to smoothly accommodate any kind of variation, for example, as an increase (decrease) in the size of dimensionality or using different generational schemes as well.
 
 We are aware that our work is limited to few tournament size values. Also, we understand that the other parameters may have some influence in the results. We propose that more investigations need to be done, in order to better understand the role of the tournament size value related to the quality of final results. Also, we would like to explore how much the results were influenced by the particular sets of GA operators studied here.
 
