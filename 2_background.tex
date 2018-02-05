@@ -5,12 +5,12 @@
 
 A selection scheme is a process that aims to improve the average quality of the GA by giving solutions of higher quality a higher probability of composing the next generation~\cite{blickle1995mathematical}.  The tournament selection, as any selection mechanism in GA, simply favors the selection of better individuals of a population to influence the next generation.
 
-Tournament Selection is a selection scheme that has a unique set of characteristic that makes it a very popular choice~\cite{blickle1995mathematical}. It is simple to code and its complexity is O(n)~\cite{goldberg1991comparative} which makes it efficient for both nonparallel and parallel architectures. It can increase (decrease) the selection pressure by increasing (decreasing) the tournament size.
+Tournament Selection is a selection scheme that has a unique set of characteristics that makes it a very popular choice~\cite{blickle1995mathematical}. It is simple to code and its complexity is O(n) on the size of the population~\cite{goldberg1991comparative} which makes it efficient for both nonparallel and parallel architectures.
 
- The tournament selection is also translation and scaling invariant~\cite{maza1993analysis}, which means that the behavior of the selection scheme is not affect by the scale of the fitness values~\cite{back2000evolutionary}.
-% as Miller et al. declared in their study\textsc{}
+ The tournament selection is also translation and scaling invariant~\cite{maza1993analysis}, which means that the behavior of the selection scheme is not affected by the scale of the fitness values~\cite{back2000evolutionary}.
 
-The tournament selection is able to do adjust the selection pressure and can do that easily, because it's only control parameter influences directly the selection pressure. That is an important feature, because any selection scheme should have is the capacity of being able to adjust its selection pressure given different domains. Even so often tournaments are held only between two individuals (binary tournament) but a generalization is possible to an arbitrary group size k called tournament size~\cite{blickle1995mathematical, goldberg1991comparative}. We verified that using binary tournaments  is still a popular choice. 
+
+It is often claimed that the tournament selection is able to do adjust the selection pressure by changing its only parameter, which controls the number of individuals chosen to take part in the tournament. That is an important feature, because any selection scheme should have the capacity to adjust its selection pressure given different domains. When only two individuals are selected, it is often called a binary tournament~\cite{blickle1995mathematical, goldberg1991comparative}, which is a popular choice. However, in principle there is no limit for the size of the tournament.
 
 \subsection{The Tournament Selection Procedure}\label{sec:background:tournament_selection} 
 
@@ -25,7 +25,7 @@ Tournament selection is conducted as: choose a number $K$ of solutions randomly 
 
 
 
-Holtschulte and Moses, in~\cite{holtschulte2013benchmarking} used rank selection in their GA implementation and applied it to the BBOB functions. They declared that rank selection should be replaced by an elitism selection scheme to improve the performance of their GA implementation by spreading of high quality solutions through the population. 
+Holtschulte and Moses~\cite{holtschulte2013benchmarking} used rank selection in their GA implementation and applied it to the BBOB functions. They declared that rank selection should be replaced by an elitism selection scheme to improve the performance of their GA implementation by spreading of high quality solutions through the population. 
 
 The roulette-wheel and the tournament selection are two of these elitist selection schemes. However, it has been shown that roulette-wheel leads to premature convergence~\cite{baker1987reducing}. 
 
@@ -35,11 +35,15 @@ These two studies in addition to the tournament selection popularity and its pow
 
 
 \subsection{Tournament Pressure}\label{sec:background:tournament_pressure} 
-Muhlenbein et al., in~\cite{muhlenbein1993predictive}, introduced the concept of selection intensity, which is to measure the pressure of selection schemes. The selection intensity is defined as the expected average fitness of the population after selection.  
+Muhlenbein et al., in~\cite{muhlenbein1993predictive}, introduced the concept of selection intensity, which is to measure the pressure of selection schemes. The selection intensity is defined as the expected average fitness of the population after selection. This definition can only be applied because the tournament selection is scale and translation invariant~\cite{blickle1995mathematical}.
 
-Miller et al.~\cite{miller1995genetic}, argued that with higher tournament sizes, the selection pressure rises resulting in higher convergence rates, because the convergence rate of a GA is largely determined by the selection pressure.  Accordingly, if the selection pressure is too low, the convergence rate will be slower if it is too high, there is an increased chance of the GA prematurely converging. 
+Blickle et. al~\cite{blickle1995mathematical}, declare that the selection intensity can be analytically calculate for tournament sizes of 2 and 3 and for larger values with numerical integration. They calculate the selection intensity for values between 2 and 30 and showed that with higher values for the tournament size the selection intensity increases. This calculation allows the prediction of the convergence time and to can be used to compare different selection schemes.
 
-We understand that it is important to explore the values for tournament size, since this value seems to determine the balance of exploration and exploitation, by changing the selection intensity. It is possible that this balance could change given a domain, once it is expected that every domain holds a specific characteristic that would need a different proportion of this balance.
+Blickle et .al~\cite{blickle1995comparison} compared some selection schemes, given their selection intensity. They concluded that for the same selection intensity the tournament selection has the smallest loss of diversity and the highest selection variance when compared with the truncation selection, the linear ranking, the exponential rank, and the proportional rank.
+
+Miller et al.~\cite{miller1995genetic}, argued that with higher tournament sizes, the selection pressure rises resulting in higher convergence rates, because the convergence rate of a GA is largely determined by the selection pressure.  Accordingly, if the selection pressure is too low, the convergence rate will be slower if it is too high, there is an increased chance of the GA prematurely converging.
+
+Based on the studies from above, we understand that the convergence directly influences the the final results of a GA, once any variation on the convergence rates changes the lost of diversity, and the selection variance. Consequently, it is important to explore the values for tournament size, since this value seems to determine the balance of exploration and exploitation, by changing the selection intensity. It is possible that this balance could vary given a domain, once it is expected that every domain holds a specific characteristic that would need a different proportion of this balance.
 
 \subsection{Tournament Size in the Literature}\label{sec:background:tournament_size} 
 
@@ -70,13 +74,13 @@ In 2007, Kaelo et al.~\cite{kaelo2007integrated} compared the usage of the tourn
 
 Also in 2009, Nicolau~\cite{nicolau2009application} implemented a binary GA to solve the noise-free BBOB 2009 testbed. Trough a quick experimentation with a subset of benchmark functions which yielded the following equation:
 
-\vspace{-7.5mm}
+%\vspace{-7.5mm}
 \begin{equation}
 k = P/500, \text{ where P is the population size.}
 \end{equation}
 
 
-From the works showed here, it is possible to understand that there is a preference to small values for the tournament size. We traced back to 1991, and we found out that it has been a popular choice ever since. We must highlight that these values are chosen usually chosen without much justification.
+From the works reviewed here, it is possible to understand that there is a preference to small values for the tournament size. We traced back to 1991, and we found out that it has been a popular choice ever since. We must highlight that these values are usually chosen without much justification.
 
 
 
