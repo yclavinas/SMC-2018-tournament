@@ -70,22 +70,7 @@ functions.
 We vary the mutation operator (uniform or SBX), the generational
 scheme, the modality of the objective function (unimodal or
 multimodal), and the dimensionality of the objective function
-(10, 20, 40).  We observe how the runtime and the quality of the final
+(10, 20, 40).  We observe how the quality of the final
 answer changes as the value of $k$ changes.
 
-Our results show that... and can be used to understand that...
-
-%TODO: Add here the referes for "from the literature
-% A review of the literature shows that there is a preference to small
-% values for the tournament size, as 2 or 3 ~\cite{goldberg1991real,
-%   goldberg1993toward, agrawal1995simulated, harik1999gambler,
-%   tsutsui1999multi, harik1999compact, deb2000efficient,
-%   beyer2001self,kaelo2007integrated, bhunia2009application,
-%   nicolau2009application, sawyerr2011comparative,
-%   sawyerr2015benchmarking}. This has been a popular choice since
-% 1991. Most of the papers use little scientific justification for
-% their choice for the tournament size value. On the other hand,
-% Nicolau~\cite{nicolau2009application} tried to define empirically the
-% value of the tournament size for his binary GA.
- 
- 
+Our results show that for functions with only one local optimum (easier problems), the choice of $k$ does not show an effect on the final result. For harder problems, when the functions have many local optimum we saw an effect. The exact best value of $k$ may depend on the function, dimensionality and algorithm composition and this relationship is not clear. Instead of using $k$ equals to 2 or 3, we recommend that the choice of this parameter be considered more carefully. 

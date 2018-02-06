@@ -55,24 +55,6 @@
 	\label{Friedman_test_sbx-b}	
 \end{table}
 
-\begin{figure}[t]
-	\includegraphics[width=0.45\textwidth]{img/SBX-40D/covergency_unimodal_sbx_11_dim_40.pdf}
-	\caption{Population convergence for Discus Function with the SBX crossover - ($\lambda, \lambda$) scheme.}
-	\label{convergence-sbx-11-a}
-\end{figure}
-
-\begin{figure}[t]
-	\includegraphics[width=0.45\textwidth]{img/uniform-40D/covergency_unimodal_uniform_11_dim_40.pdf}
-	\caption{Population convergence for Discus Function with the uniform crossover - ($\lambda, \lambda$) scheme.}
-	\label{convergence-uniform-11-a}
-\end{figure}
-
-
-\begin{figure}[t]
-	\includegraphics[width=0.45\textwidth]{img/2n2n-40D/covergency_unimodal_2n2n_11_dim_40.pdf}
-	\caption{Population convergence for Discus Function - ($\lambda + \lambda$) scheme with the SBX crossover - ($\lambda + \lambda$) scheme.}
-	\label{convegence-11-b}
-\end{figure}
 
 
 \begin{figure*}[!t]
@@ -188,32 +170,47 @@
 \end{figure*}
 
 
+\begin{figure}[t]
+	\includegraphics[width=0.45\textwidth]{img/covergency_multimodal_2n2n_16_dim_20_tsize_16.pdf}
+	\caption{Population convergence for Weierstrass Function with the SBX crossover - ($\lambda + \lambda$) scheme - 20 dimensions.}
+	\label{convergence-sbx-16-b}
+\end{figure}
+
+\begin{figure}[t]
+	\includegraphics[width=0.45\textwidth]{img/covergency_unimodal_sbx_8_dim_10_tsize_9.pdf}
+	\caption{Population convergence for Rosenbrock Function - original with the SBX crossover - ($\lambda, \lambda$) scheme -  10 dimensions.}
+	\label{convergence-sbx-8-a}
+\end{figure}
+
+
+\begin{figure}[t]
+	\includegraphics[width=0.45\textwidth]{img/covergency_multimodal_sbx_4_dim_10_tsize_5.pdf}
+	\caption{Population convergence for Buche-Rastrigin Function - ($\lambda + \lambda$) scheme with the SBX crossover - ($\lambda + \lambda$) scheme.}
+	\label{convegence-sbx-4-a}
+\end{figure}
 
 
 \subsection{Overall Analysis}
 
-The Friedman Test showed no significant difference for the unimodal functions with the uniform crossover and with any dimension. Tough for the multimodal functions with any dimension, the test found significant difference. For example, in Figure~\ref{uniform-22-a}, it is possible to see that for the Gallagher’s Gaussian 21-hi Peaks Function higher values for the tournament size indicate better results.
+The Friedman Test showed no significant difference for the unimodal functions with the uniform crossover and with any dimension. Tough for the multimodal functions with any dimension, the test found significant difference. For example, in Figure~\ref{uniform-22-a}, it is possible to see that for the Gallagher's Gaussian 21-hi Peaks Function higher values for the tournament size indicate better results.
 
-On all other cases, the Friedman Test showed significant difference in values among tournament size. That is when the SBX operator is used, regarding the generational scheme or dimension, for every group of functions (unimodal or multimodal).  
-
-
-The results can be better analyzed in the following Tables~\ref{Friedman_test_uniform-a}, ~\ref{Friedman_test_sbx-a} and ~\ref{Friedman_test_sbx-b}.
+On all other cases, the Friedman Test showed significant difference in values among tournament size. The results are listed in Tables~\ref{Friedman_test_uniform-a}, ~\ref{Friedman_test_sbx-a} and ~\ref{Friedman_test_sbx-b}.
 
 \subsection{Functions Analysis}
 
-To get a finer intuition about the results, we show some visual examples, separated in two groups of Figures. The first group, shows the mean value achieved by the GA given a function. The second one, shows the convergence plot with the mean of the values found at each generation, the function target value with a given tournament size. All Figures represent the mean of 40 repetitions given a certain dimension.
+To get a finer intuition about the results, we show some visual examples, separated in two groups of Figures. The first group, shows the mean value achieved by the GA for the Gallagher's Gaussian 21-hi Peaks Function and the second group for the Discus Function (other functions are available as supplemental material). All Figures represent the mean of 40 repetitions given a certain dimension.
 
 
 The Figures~\ref{sbx-22-a} and ~\ref{uniform-22-a} exemplify that for the Gallagher's Gaussian 21-hi Peaks Function (with 10, 20 and 40 dimensions) changing the tournament size for higher values tend to increase the quality of the results, for the generational scheme ($\lambda, \lambda$). While for the generational scheme ($\lambda + \lambda$), the Figure~\ref{sbx-22-B} that exemplifies that for the Gallagher's Gaussian 21-hi Peaks Function changing the dimension has a dominating impact on the final values found by the GA. This means that for the same function but with different dimensions the values changing the tournament size may increase or decrease the quality of the results.
 
-The dominance of the dimensionality observed in Figure~\ref{sbx-22-B} also occurs in the Discus Function. The Figures~\ref{sbx-11-a},~\ref{uniform-11-a}, (with 10, 20 and 40 dimensions) show  changing the dimensionality of the problem may have a high impact in the choice of the tournament value with the generational scheme ($\lambda, \lambda$). The Figure~\ref{sbx-11-B} show that with the generational scheme ($\lambda + \lambda$) changing the tournament size leads to significant better final values found by the GA. In this case it is understandable that smaller values may positive affect the results, specially with low dimensionality. 
+The dominance of the dimensionality observed in Figure~\ref{sbx-22-B} also occurs in the Discus Function. The Figures~\ref{sbx-11-a},~\ref{uniform-11-a}, (with 10, 20 and 40 dimensions) show  changing the dimensionality of the problem may have a high impact in the choice of the tournament value with the generational scheme ($\lambda, \lambda$). The Figure~\ref{sbx-11-B} show that with the generational scheme ($\lambda + \lambda$) changing the tournament size leads to significant better final values found by the GA. From the Figures we understand that smaller values positively affect the results, specially with low dimensionality. 
 
-For all Figures, the gray shaded area represents the 95\% confidence level interval for predictions from a linear model for each scenario showed and demonstrate that choosing small values for the tournament size, as 2 or 3 may be a very poor choice. For all Figures, the mean of 40 repetitions is shown as bullets and the red line is shows the objective target value for the function.
+For all Figures, the gray shaded area represents the 95\% confidence level interval of a linear regression model. This demonstrate that sometimes choosing small values for the tournament size, such as 2 or 3 may be a very poor choice. For all Figures, the mean of 40 repetitions is shown as bullets and the red line is shows the objective target value for the function.
 
 
 \subsection{Convergence Analysis}
-To make sure that the GA is converging we show a few visual examples. The Figures~\ref{convergence-sbx-11-a}, ~\ref{convergence-uniform-11-a} exemplify that the for the Discus Function with 40 dimensions and with the SBX crossover and with the uniform crossover with the ($\lambda, \lambda$) scheme, respectively, while the Figure~\ref{convegence-11-b} exemplify for the same scenario the same with the ($\lambda + \lambda$) scheme. The GA is converging towards the optimum target value, represented by the bottom, red, horizontal line.
 
+To make sure that the GA formulation under study is converging, we performed a visual examination. Figures~\ref{convergence-sbx-16-b},~\ref{convergence-sbx-8-a} and~\ref{convegence-sbx-4-a} are randomly selected examples namely the Weierstrass Function, the Rosenbrock Function - original, and the Buche-Rastrigin Function. The GA is converging towards the optimum target value, represented by the bottom, red, horizontal line.
 
-Similar Figures for other functions are available as supplementary materials.
+Similar Figures for all other combinations are available as supplementary materials.
 
