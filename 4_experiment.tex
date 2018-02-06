@@ -2,7 +2,7 @@
 
 \subsection{The Genetic Algorithm}\label{sec:proposed:ga}
 
-To test the influence of the tournament size we implemented a simple real-valued Genetic Algorithm to explore the search space of the 24 noise free N dimension BBOB benchmark functions~\cite{hansen2010real}, while changing the value of the tournament K.
+To test the influence of the tournament size we implemented a simple real-valued Genetic Algorithm to explore the search space of the 24 noise free N dimension BBOB benchmark functions~\cite{hansen2010real}, while changing the value of the tournament size.
 
 \subsubsection*{Genome Representation and Evolutionary Tools.}
 Each solution is represented as real valued array, where each element is one input to a N dimension noise free benchmark BBOB function. Therefore, each possible solution of the GA has size of N real value elements. The values of any solution are defined to the be into the interval [-5, 5], since the target functions are bounded by this interval. We considerer two crossover operators when experimenting with the GA: the Uniform crossover and the Simulated Binary crossover (SBX). The other evolutionary operators are elitism and Gaussian mutation. The relevant parameters were set as in the Table~\ref{relevant_par} and Table~\ref{gaussian_par}.
