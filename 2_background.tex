@@ -2,15 +2,35 @@
 \section{The Tournament Selection}\label{sec:background:Selection Scheme} 
 
 
+A selection scheme is a process that aims to improve the average
+quality of the GA by giving solutions of higher quality a higher
+probability of composing the next
+generation~\cite{blickle1995mathematical}.  The tournament selection,
+as any selection mechanism in GA, simply favors the selection of
+better individuals of a population to influence the next generation.
 
-A selection scheme is a process that aims to improve the average quality of the GA by giving solutions of higher quality a higher probability of composing the next generation~\cite{blickle1995mathematical}.  The tournament selection, as any selection mechanism in GA, simply favors the selection of better individuals of a population to influence the next generation.
+Tournament Selection is a selection scheme that has a unique set of
+characteristics that makes it a very popular
+choice~\cite{blickle1995mathematical}. It is simple to code, and its
+complexity is O(n) on the size of the
+population~\cite{goldberg1991comparative} which makes it efficient for
+both nonparallel and parallel architectures.
 
-Tournament Selection is a selection scheme that has a unique set of characteristics that makes it a very popular choice~\cite{blickle1995mathematical}. It is simple to code, and its complexity is O(n) on the size of the population~\cite{goldberg1991comparative} which makes it efficient for both nonparallel and parallel architectures.
+ The tournament selection is also translation and scaling
+ invariant~\cite{maza1993analysis}, which means that the behavior of
+ the selection scheme is not affected by the scale of the fitness
+ values~\cite{back2000evolutionary}.
 
- The tournament selection is also translation and scaling invariant~\cite{maza1993analysis}, which means that the behavior of the selection scheme is not affected by the scale of the fitness values~\cite{back2000evolutionary}.
 
-
-It is often claimed that the tournament selection is able to adjust the selection pressure by changing its only parameter, which controls the number of individuals chosen to take part in the tournament. That is an important feature, because any selection scheme should have the capacity to adjust its selection pressure given different domains. When only two individuals are selected, it is often called a binary tournament~\cite{blickle1995mathematical, goldberg1991comparative}, which is a popular choice. However, in principle there is no limit for the size of the tournament.
+It is often claimed that the tournament selection is able to adjust
+the selection pressure by changing its only parameter, which controls
+the number of individuals chosen to take part in the tournament. That
+is an important feature, because any selection scheme should have the
+capacity to adjust its selection pressure given different
+domains. When only two individuals are selected, it is often called a
+binary tournament~\cite{blickle1995mathematical,
+  goldberg1991comparative}, which is a popular choice. However, in
+principle there is no limit for the size of the tournament.
 
 \subsection{The Tournament Selection Procedure}\label{sec:background:tournament_selection} 
 

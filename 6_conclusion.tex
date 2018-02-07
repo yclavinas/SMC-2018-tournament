@@ -4,14 +4,38 @@
 \label{sec:conclusion}
 
 
-We proposed an experimental analysis of the impact of the tournament size on the BBOB benchmark functions. We verified that there are few mathematical or experimental studies that supports a choice of value for the tournament size. Usually, the tournament size is chosen to be 2 or 3, based on ``previous results''. 
+We proposed an experimental analysis of the impact of the tournament
+size on the BBOB benchmark functions. We verified that there are few
+mathematical or experimental studies that supports a choice of value
+for the tournament size. Usually, the tournament size is chosen to be
+2 or 3, based on ``previous results''.
  
-We analyzed a group of tournament size values on different selection operators. We found in the results that using the tournament size with values like 2 or 3 may not be good choices, depending on the characteristic of the problem you are exploring. We showed evidences that support this affirmative. 
+We analyzed a group of tournament size values on different selection
+operators. From the results of this experiment, we found that using
+the tournament size with values like 2 or 3 may not always be a good
+choice, depending on the characteristic of the problem being explored.
 
-Our experiments demonstrated that for every domain of problems, the tournament selection may behave differently according to the ``best''choice of the tournament value, with some having more benefit with higher values. Also we realized that for the same problems, the choice of the tournament value may change with different dimensionality as well as with the generational scheme selected to compose the GA.
+Our experiments demonstrated that for each problem domain the effect
+of tournament size on the final result can have completely different
+characteristics. In some cases a higher tournament size achieves the
+best result, in others, the opposite happens. We also observed
+that even for the same problem, the choice of tournament size may
+depend on the dimensionality or the structure of the Genetic Algorithm
+being used.
 
-In conclusion, we suggest that future works consider some sort of self-adaptative procedure should be tried. We believe that using this technique may diminish the time spend on the design process, once it minimizes the impact of bad choice of values for the tournament size by adjusting this parameter on-line during the search process. Also, it would make the GA able to smoothly accommodate any kind of variation, for example, as an increase (decrease) in the size of dimensionality or using different generational schemes as well.
+In conclusion, we suggest that future works consider the use of
+self-adaptive schemes for the control of the tournament size
+parameter, instead of relying on fixed values. We believe that using
+this technique may diminish the time spend on the design process, and
+minimize the impact of bad choice of values for the tournament size by
+adjusting this parameter on-line during the search process.
 
-We are aware that our work is limited to few tournament size values. Also, we understand that the other parameters may have some influence in the results. We propose that more investigations need to be done, in order to better understand the role of the tournament size value related to the quality of final results. Also, we would like to explore how much the results were influenced by the particular sets of GA operators studied here.
+Some of the limitations of the current experiment are the limited
+range of tournament size values tested, and the analysis of iteraction
+effects between the tournament size and other parameters of the GA,
+including the choice of operators.  Overcoming these limitations would
+allow the community to better understand the role of the tournament
+size in the quality of the search.
+
 
 
