@@ -33,10 +33,11 @@ On the other hand, works in the past 15 years have commonly used very
 small values for $k$, such as 2 or
 3~\cite{deb2000efficient,beyer2001self,
   kaelo2007integrated,nicolau2009application,
-  sawyerr2011comparative,sawyerr2015benchmarking, oztekin2018decision}. The reason for this
-change is hard to identify, as most papers either do not justify their
-choice of parameters, or lightly mention a concern over computational
-cost for this rule of thumb.
+  sawyerr2011comparative,sawyerr2015benchmarking,
+  oztekin2018decision}. The reason for this change is hard to
+identify, as most papers either do not justify their choice of
+parameters, or lightly mention a concern over computational cost for
+this rule of thumb.
 
 %One of the most used selection operator is the tournament selection
 %operator. It selects solutions based on their fitness value and on one
@@ -69,8 +70,15 @@ functions.
 
 We vary the mutation operator (uniform or SBX), the generational
 scheme, the modality of the objective function (unimodal or
-multimodal), and the dimensionality of the objective function
-(10, 20, 40).  We observe how the quality of the final
-answer changes as the value of $k$ changes.
+multimodal), and the dimensionality of the objective function (10, 20,
+40).  We observe how the quality of the final answer changes as the
+value of $k$ changes.
 
-Our results show that for functions with only one local optimum (easier problems), the choice of $k$ does not show an effect on the final result. For harder problems, when the functions have many local optimum we saw an effect. The exact best value of $k$ may depend on the function, dimensionality and algorithm composition and this relationship is not clear. Instead of using $k$ equals to 2 or 3, we recommend that the choice of this parameter be considered more carefully. 
+Our results show that for functions with only one local optimum
+(easier problems), the choice of $k$ does not show an effect on the
+final result. For harder problems, when the functions have many local
+optimum we saw an effect. The exact best value of $k$ may depend on
+the function, dimensionality and algorithm composition and this
+relationship is not clear. Instead of using $k$ equals to 2 or 3, we
+recommend that the choice of this parameter be considered more
+carefully.

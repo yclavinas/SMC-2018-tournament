@@ -2,10 +2,23 @@
 
 \subsection{The Genetic Algorithm}\label{sec:proposed:ga}
 
-To test the influence of the tournament size we implemented a simple real-valued Genetic Algorithm to explore the search space of the 24 noise free N dimension BBOB benchmark functions~\cite{hansen2010real}, while changing the value of the tournament size.
+To test the influence of the tournament size we implemented a simple
+real-valued Genetic Algorithm to explore the search space of the 24
+noise free N dimension BBOB benchmark functions~\cite{hansen2010real},
+while changing the value of the tournament size.
 
 \subsubsection*{Genome Representation and Evolutionary Tools.}
-Each solution is represented as real valued array, where each element is one input to a N dimension noise free benchmark BBOB function. Therefore, each possible solution of the GA has size of N real value elements. The values of any solution are defined to the be into the interval [-5, 5], since the target functions are bounded by this interval. We considerer two crossover operators when experimenting with the GA: the Uniform crossover and the Simulated Binary crossover (SBX). The other evolutionary operators are elitism and Gaussian mutation. The relevant parameters were set as in the Table~\ref{relevant_par} and Table~\ref{gaussian_par}.
+
+Each solution is represented as a N-dimensional real valued array,
+which is used as the input parameters to a N dimensional noise free
+BBOB function.  The search space for each function is bounded to the
+[-5, 5] interval for every dimension.
+
+We considerer two crossover operators when experimenting with the GA:
+the Uniform crossover and the Simulated Binary crossover (SBX). The
+other evolutionary operators are elitism and Gaussian mutation. The
+relevant parameters were set as in the Table~\ref{relevant_par} and
+Table~\ref{gaussian_par}.
 
 \vspace{3mm}
 \begin{table}[!ht]
@@ -36,23 +49,49 @@ Each solution is represented as real valued array, where each element is one inp
 \end{table}
 
 \subsubsection*{Fitness Function.}
-The fitness function considered are the N dimensions noise free benchmark BBOB functions~\cite{hansen2010real}.
-
-
-
-
+The fitness function considered are the N dimensional noise free
+benchmark BBOB functions~\cite{hansen2010real}.
 
 \subsubsection*{Generational Scheme.}
-Two generation schemes were used, the first is named the ($\lambda, \lambda$), also called the comma version, and the second is named the ($\lambda + \lambda$), also called the plus version. The ($\lambda, \lambda$) scheme has a $\lambda$ population of parents and for every generation it creates the $\lambda$ offspring to compose the next population. The ($\lambda + \lambda$) scheme creates the $\lambda$ offspring and the best $\lambda$ individuals from combined population of offspring and parents are select to the next generation~\cite{pilat2017parallel}.
+Two generation schemes were used, the first is named the ($\lambda,
+\lambda$), also called the comma version, and the second is named the
+($\lambda + \lambda$), also called the plus version. The ($\lambda,
+\lambda$) scheme has a $\lambda$ population of parents and for every
+generation it creates the $\lambda$ offspring to compose the next
+population. The ($\lambda + \lambda$) scheme creates the $\lambda$
+offspring and the best $\lambda$ individuals from combined population
+of offspring and parents are select to the next
+generation~\cite{pilat2017parallel}.
 
 Code for reproduction of the experiment is available at [anonymous].
 
 %comentario para claus re-escrever
 %TODO
-\subsection{Experiments}\label{sec:experiment}
-We made two experiments aiming to verify the impact of different values for the tournament size. In the first experiment, we analyzed the relation between the tournament size and the performance on the BBOB benchmark functions with 10, 20 and 40 dimensions, when combined with the Uniform crossover or with the SBX, with the generational scheme  ($\lambda, \lambda$). Then, we analyzed the same relation from before with the same functions and dimensions, but with the generational scheme  ($\lambda + \lambda$) and only the SBX crossover. We consider that the impact the results may be different acknowledged the 2 groups of functions and therefore we analyze the results by grouping all functions together, or the unimodal functions or the multimodal functions. 
+\subsection{Experiment}\label{sec:experiment}
 
-We used the Friedman Test to determine whether any of the values for the tournament size show a significant difference in the average performance. In each of these tests, we set $\alpha = 0.05$. For this analysis, the dependent variable being the average performance, the blocking variable is the BBOB function number and the treatment variable is the tournament size value.
+Our experiment aims to find out whether the value of K makes a
+consistent impact on the performance of GA, and if it does, whether
+this impact is dependent on the problem being solved, and on the
+composition of the GA. To answer this question, we follow this procedure:
+
+First, we perform GA searches while varying the following factors:
+Function (the 24 unimodal and multimodal noise-free BBOB), Dimension
+Size (10, 20, 40), Crossover Operator (SBX or Uniform), Generational
+Scheme ($\lambda, \lambda$) or ($\lambda + \lambda$) and Tournament
+Size (2 to 25). For each combination above, we repeat the GA search 40
+times, and the mean final function evaluation value is chosen as the
+representative value for that particular combination.
+
+We group the experiments by the modality of the function (unimodal or
+multimodal), the dimension and the GA composition, and for each group
+perform an inference test on the value of the tournament size. On each
+group we perform a Friedman Test to determine whether any of the
+values for K show a significant difference in the average
+performance. In each test, we set $\alpha = 0.05$, the dependent
+variable being the mean final function evaluation value, the blocking
+variable is the BBOB function and the treatment variable is the
+tournament size.
+
 
 
 

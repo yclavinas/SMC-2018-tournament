@@ -37,6 +37,8 @@
 	\label{Friedman_test_sbx-a}	
 \end{table}
 
+	
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{|l|l|l|l|}
@@ -197,27 +199,78 @@
 
 
 
-\subsection{Overall Analysis}
+\subsection{Overall Effect of K}
 
-The Friedman Test showed no significant difference for the unimodal functions with the uniform crossover and with any dimension. Tough for the multimodal functions with any dimension, the test found significant difference. For example, in Figure~\ref{uniform-22-a}, it is possible to see that for the Gallagher's Gaussian 21-hi Peaks Function higher values for the tournament size indicate better results.
+The Friedman Test showed no effect of changing the value of K
+for unimodal functions with the uniform crossover and any
+number of dimensions (table~\ref{Friedman_test_uniform-a}). 
 
-On all other cases, the Friedman Test showed significant difference in values among tournament size. The results are listed in Tables~\ref{Friedman_test_uniform-a}, ~\ref{Friedman_test_sbx-a} and ~\ref{Friedman_test_sbx-b}.
+On the other hand, for unimodal functions with the SBX crossover, and
+for multimodal functions with any other setup, the test indicated a
+significant effect of changing the value of K on the final result of
+the search~(tables~\ref{Friedman_test_sbx-a}, \ref{Friedman_test_sbx-b}). 
 
-\subsection{Functions Analysis}
+An example of this effect can be seen in Figure~\ref{uniform-22-a},
+where it is possible to see that for the Gallagher's Gaussian 21-hi
+Peaks Function higher values for the tournament size indicate better
+results.
 
-To get a finer intuition about the results, we show some visual examples, separated in two groups of Figures. The first group, shows the mean value achieved by the GA for the Gallagher's Gaussian 21-hi Peaks Function and the second group for the Discus Function (other functions are available as supplemental material). All Figures represent the mean of 40 repetitions given a certain dimension.
+\subsection{Analysis by Function}
+
+To get a finer intuition of these results, we show some visual
+examples separated in two groups of figures. The first group shows the
+mean value achieved by the GA for the Gallagher's Gaussian 21-hi Peaks
+Function, and the second group does the same for the Discus
+Function. Both groups show the mean function values of 40 repetitions
+for each set of parameters, and a linear regression line on the value
+of K against the mean function value. While the results discussed here
+are representative for the other functions studied, similar figures
+for all other functions are available as supplemental materials.
+
+Figures~\ref{sbx-22-a} and ~\ref{uniform-22-a} show that for the
+Gallagher's Gaussian 21-hi Peaks Function (with 10, 20 and 40
+dimensions) changing the tournament size to higher values tends to
+increase the quality of the results for the generational scheme
+($\lambda, \lambda$). On the other hand, for the generational scheme
+($\lambda + \lambda$), Figure~\ref{sbx-22-B} shows that changing the
+dimension has a dominating impact on the final values found by the
+GA. This means that in this case the best tournament value depends on
+the number of dimensions in the problem.
+
+The dominance of the dimensionality observed in Figure~\ref{sbx-22-B}
+also occurs in the Discus Function.
+Figures~\ref{sbx-11-a},~\ref{uniform-11-a}, (with 10, 20 and 40
+dimensions) show that changing the dimensionality of the problem may
+have a high impact in the choice of the tournament value with the
+generational scheme ($\lambda, \lambda$). Figure~\ref{sbx-11-B} shows
+that with the generational scheme ($\lambda + \lambda$) changing the
+tournament size leads to better final results. From these figures we
+understand that smaller values positively affect the results,
+specially with low dimensionality.
+
+For all Figures, the gray shaded area represents the 95\% confidence
+level interval of a linear regression model. From these regressions,
+we can see that sometimes choosing small values for K can be a poor
+choice, a good choice, or make no difference at all. For all Figures,
+the mean of 40 repetitions is shown as bullets and the red line at the
+bottom shows the target value for the function.
 
 
-The Figures~\ref{sbx-22-a} and ~\ref{uniform-22-a} exemplify that for the Gallagher's Gaussian 21-hi Peaks Function (with 10, 20 and 40 dimensions) changing the tournament size for higher values tend to increase the quality of the results, for the generational scheme ($\lambda, \lambda$). While for the generational scheme ($\lambda + \lambda$), the Figure~\ref{sbx-22-B} that exemplifies that for the Gallagher's Gaussian 21-hi Peaks Function changing the dimension has a dominating impact on the final values found by the GA. This means that for the same function but with different dimensions the values changing the tournament size may increase or decrease the quality of the results.
+\subsection{Convergence Assumption}
 
-The dominance of the dimensionality observed in Figure~\ref{sbx-22-B} also occurs in the Discus Function. The Figures~\ref{sbx-11-a},~\ref{uniform-11-a}, (with 10, 20 and 40 dimensions) show  changing the dimensionality of the problem may have a high impact in the choice of the tournament value with the generational scheme ($\lambda, \lambda$). The Figure~\ref{sbx-11-B} show that with the generational scheme ($\lambda + \lambda$) changing the tournament size leads to significant better final values found by the GA. From the Figures we understand that smaller values positively affect the results, specially with low dimensionality. 
+Finally, we want to make sure that all GA compositions used are actually
+performing the search (even though the final effectiveness varies with
+parameter choice). To verify this assumption, we perform a
+visual examination of the convergence of the functions studied. 
 
-For all Figures, the gray shaded area represents the 95\% confidence level interval of a linear regression model. This demonstrate that sometimes choosing small values for the tournament size, such as 2 or 3 may be a very poor choice. For all Figures, the mean of 40 repetitions is shown as bullets and the red line is shows the objective target value for the function.
+Figures~\ref{convergence-sbx-16-b},~\ref{convergence-sbx-8-a},~\ref{convegence-sbx-4-a},
+and~\ref{convegence-sbx-3-a} are randomly selected samples of this
+examination, namely the Weierstrass Function, the Rosenbrock Function
+- original, the Buche-Rastrigin Function, and the Rastrigin Function
+(F3).
 
-
-\subsection{Convergence Analysis}
-
-To make sure that the GA formulation under study is converging, we performed a visual examination. Figures~\ref{convergence-sbx-16-b},~\ref{convergence-sbx-8-a},~\ref{convegence-sbx-4-a}, and~\ref{convegence-sbx-3-a} are randomly selected examples namely the Weierstrass Function, the Rosenbrock Function - original, the Buche-Rastrigin Function, and the Rastrigin Function (F3). The GA is converging towards the optimum target value, represented by the bottom, red, horizontal line.
-
-Similar Figures for all other combinations are available as supplementary materials.
+From these figures we can see that the studied GAs are indeed
+converging towards the optimum target value, represented by the bottom
+red line. Similar figures for other GA/function combinations are
+available on the source repository.
 
