@@ -1,0 +1,3 @@
+pdflatex ExperimentalAnalysisTournamentSize onGeneticAlgorithms.tex
+mv main.pdf ExperimentalAnalysisoftheTournamentSizeonGA.pdf
+open ExperimentalAnalysisoftheTournamentSizeonGA.pdf
