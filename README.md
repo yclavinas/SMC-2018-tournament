@@ -1,1 +1,1 @@
-# gecco-2018-tournament
+# SMC-2018-tournament
