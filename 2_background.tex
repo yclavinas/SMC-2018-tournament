@@ -63,7 +63,7 @@ Blickle et al.~\cite{blickle1995comparison} compared some selection schemes, giv
 
 Miller et al.~\cite{miller1995genetic}, argued that with higher tournament sizes, the selection pressure rises resulting in higher convergence rates, because the convergence rate of a GA is largely determined by the selection pressure.  Accordingly, if the selection pressure is too low, the convergence rate will be slower, while if it is too high, there is an increased chance of the GA prematurely converging.
 
-Based on the studies from above, we understand that the convergence directly influences the the final results of a GA, once any variation on the convergence rates changes the lost of diversity, and the selection variance. Consequently, it is important to explore the values for tournament size, since this value seems to determine the balance of exploration and exploitation by changing the selection intensity. It is possible that this balance could vary given a domain, once it is expected that every domain holds a specific characteristic that would need a different proportion of this balance.
+Based on the studies from above, we understand that the convergence directly influences the the final results of a GA, once any variation on the convergence rates changes the lost of diversity, and the selection variance. Consequently, it is important to explore the values for tournament size, since this value seems to determine the balance of exploration and exploitation by changing the selection intensity. It is possible that this balance could vary given a domain, once it is expected that every domain holds a specific set of characteristics that would need a different proportion of this balance.
 
 \subsection{Tournament Size in the Literature}\label{sec:background:tournament_size} 
 
@@ -89,10 +89,10 @@ In 1999, Harik et al.~\cite{harik1999compact} studied a simple GA and experiment
 
 Also, Harik et al.~\cite{harik1999gambler} implement a binary coded GA using tournament selection. They analyze the impact of the tournament size on their GA with a 100-bit one-max function. They inspected this implementation with tournament sizes of 2, 4, and 8. They observed that the proportion of the building blocks changed with the tournament size, being higher for smaller tournament sizes.
 
-In 2007, Kaelo et al.~\cite{kaelo2007integrated} compared the usage of the tournament size in a real-coded GA. They discuss the impact of using tournament size of 2 and tournament size of 3. The results of comparing these two tournament sizes indicated that the tournament with size 3 is more greedy, reduces the number of functions evaluations greatly and also improves CPU usage, therefore, it impacts negatively in the success rate of their GA.
+In 2007, Kaelo et al.~\cite{kaelo2007integrated} compared the usage of the tournament size in a real-coded GA. They discuss the impact of using tournament size of 2 and tournament size of 3. The results of comparing these two tournament sizes indicated that although the tournament with size 3 is more greedy, reduces the number of functions evaluations greatly and also improves CPU usage, it impacts negatively in the success rate of their GA.
 
 
-Also in 2009, Nicolau~\cite{nicolau2009application} implemented a binary GA to solve the noise-free BBOB 2009 testbed. Through a quick experimentation with a subset of benchmark functions which yielded the following equation $k = P/500$ where P is the population size.
+Also in 2009, Nicolau~\cite{nicolau2009application} implemented a binary GA to solve the noise-free BBOB 2009 testbed. He conducted a quick experimentation with a subset of benchmark functions which yielded the following equation $k = P/500$, where P is the population size.
 
 From the works reviewed here, it is possible to understand that there is a preference to small values for the tournament size. We traced back to 1991, and we found out that it has been a popular choice ever since. We must highlight that these values are usually chosen without much justification.
 
